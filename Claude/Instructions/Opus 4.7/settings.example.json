@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "autoMemoryEnabled": false,
+  "enabledPlugins": {
+    "example-plugin@example-marketplace": false
+  },
+  "env": {
+    "CLAUDE_CODE_GIT_BASH_PATH": "C:\\Program Files\\Git\\bin\\bash.exe"
+  },
+  "extraKnownMarketplaces": {
+    "example-marketplace": {
+      "source": {
+        "path": "owner/plugin-repository",
+        "source": "github"
+      }
+    }
+  },
+  "outputStyle": "maximum-quality",
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "deny": [
+      "Bash(*.credentials.json*)",
+      "Bash(*.env*)",
+      "Bash(*auth.json*)",
+      "Bash(*sandbox-secrets*)",
+      "Bash(*secrets*)",
+      "PowerShell(*.credentials.json*)",
+      "PowerShell(*.env*)",
+      "PowerShell(*auth.json*)",
+      "PowerShell(*sandbox-secrets*)",
+      "PowerShell(*secrets*)",
+      "Read(./**/.env)",
+      "Read(./**/.env.*)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(~/.aws/**)",
+      "Read(~/.claude/.credentials.json)",
+      "Read(~/.codex/.credentials.json)",
+      "Read(~/.codex/.sandbox-secrets/**)",
+      "Read(~/.codex/auth.json)",
+      "Read(~/.env)",
+      "Read(~/.env.*)",
+      "Read(~/.ssh/**)",
+      "Read(~/secrets/**)"
+    ]
+  },
+  "skipDangerousModePermissionPrompt": false
+}

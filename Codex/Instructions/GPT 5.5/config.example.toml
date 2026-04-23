@@ -1,0 +1,51 @@
+# Example Codex configuration for the Xenopus GPT 5.5 workflow stack.
+# Review every value before copying into a real ~/.codex/config.toml.
+
+approval_policy = "on-request"
+default_permissions = "trusted"
+developer_instructions = "Use AGENTS.md for the durable instruction surface. Keep local secrets, sessions, caches, logs, app state, and machine-private paths out of repositories."
+model = "gpt-5.5"
+sandbox_mode = "workspace-write"
+
+[analytics]
+enabled = false
+
+[apps._default]
+destructive_enabled = false
+
+[mcp_servers.observability]
+bearer_token_env_var = "OBSERVABILITY_MCP_TOKEN"
+url = "https://example.invalid/mcp/observability"
+
+[mcp_servers.openaiDeveloperDocs]
+url = "https://example.invalid/mcp/openai-docs"
+
+[plugins.atlassian-rovo]
+enabled = false
+
+[plugins.browser-use]
+enabled = false
+
+[plugins.cloudflare]
+enabled = false
+
+[plugins.github]
+enabled = false
+
+[plugins.gmail]
+enabled = false
+
+[plugins.sentry]
+enabled = false
+
+[plugins.slack]
+enabled = false
+
+[plugins.vercel]
+enabled = false
+
+[shell_environment_policy]
+exclude = ["*_KEY", "*_PASSWORD", "*_SECRET", "*_TOKEN", "AWS_*", "GITHUB_TOKEN", "OPENAI_API_KEY"]
+
+[windows]
+sandbox = "native"

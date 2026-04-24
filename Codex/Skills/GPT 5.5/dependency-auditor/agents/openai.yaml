@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $dependency-auditor to inspect manifests and lockfiles, reconcile advisories/licenses from current sources, and report actionable dependency risk with validation gaps."
+  display_name: "Dependency Auditor"
+  short_description: "Dependency risk audit"
+policy:
+  allow_implicit_invocation: true

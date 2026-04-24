@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $backend-implementer to inspect backend conventions, implement the scoped server/API/service change, add focused validation, and report compatibility and operational risk."
+  display_name: "Backend Implementer"
+  short_description: "Production backend changes"
+policy:
+  allow_implicit_invocation: true

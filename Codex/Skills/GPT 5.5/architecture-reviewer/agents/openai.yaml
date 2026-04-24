@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $architecture-reviewer to review design structure from local evidence, challenge boundary and scale risks, and return a verdict plus validation plan."
+  display_name: "Architecture Reviewer"
+  short_description: "Review architecture and boundaries"
+policy:
+  allow_implicit_invocation: true

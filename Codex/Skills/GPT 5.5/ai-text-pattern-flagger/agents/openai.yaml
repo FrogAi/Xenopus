@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $ai-text-pattern-flagger to review the user's draft for observable AI-sounding patterns, preserve facts and voice constraints, and return line-specific flags plus meaning-preserving rewrites."
+  display_name: "AI Text Flagger"
+  short_description: "AI-pattern text review"
+policy:
+  allow_implicit_invocation: true

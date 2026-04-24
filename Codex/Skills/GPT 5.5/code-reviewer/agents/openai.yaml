@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $code-reviewer to inspect the diff and surrounding source, lead with concrete findings ordered by severity, and report test gaps without editing files."
+  display_name: "Code Reviewer"
+  short_description: "Correctness-first code review"
+policy:
+  allow_implicit_invocation: true

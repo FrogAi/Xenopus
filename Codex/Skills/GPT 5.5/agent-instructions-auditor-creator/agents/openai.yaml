@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $agent-instructions-auditor-creator to inspect the named instruction files and runtime docs, separate source facts from local evidence, and return concrete findings or edits with load-path validation."
+  display_name: "Agent Instructions"
+  short_description: "Agent instruction files"
+policy:
+  allow_implicit_invocation: true

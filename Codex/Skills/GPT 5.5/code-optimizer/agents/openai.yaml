@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $code-optimizer to establish a performance baseline, locate the code-path bottleneck, apply only measured code-level fixes when requested, and report validation limits."
+  display_name: "Code Optimizer"
+  short_description: "Code performance fixes"
+policy:
+  allow_implicit_invocation: true

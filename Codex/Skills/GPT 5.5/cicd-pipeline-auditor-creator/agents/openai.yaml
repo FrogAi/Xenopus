@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $cicd-pipeline-auditor-creator to inspect pipeline files and provider evidence, verify current platform/security docs, and produce audited CI/CD findings or gated edits."
+  display_name: "CI/CD Pipelines"
+  short_description: "CI/CD pipeline work"
+policy:
+  allow_implicit_invocation: true

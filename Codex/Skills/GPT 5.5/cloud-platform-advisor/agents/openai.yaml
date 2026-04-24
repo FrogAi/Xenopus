@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $cloud-platform-advisor for non-AWS cloud work: verify provider context, keep discovery read-only, gate live mutations, and report source-backed risk."
+  display_name: "Cloud Platform Advisor"
+  short_description: "Audit non-AWS cloud platforms"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $codebase-explorer to map the repository from real files, trace the requested flow or architecture, cite source paths, and avoid code changes."
+  display_name: "Codebase Explorer"
+  short_description: "Codebase exploration"
+policy:
+  allow_implicit_invocation: true

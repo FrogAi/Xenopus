@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $api-contract-designer to inspect the contract source, verify current spec/tool docs, classify compatibility impact, and produce validated schema/API changes or review findings."
+  display_name: "API Contracts"
+  short_description: "API contract design"
+policy:
+  allow_implicit_invocation: true

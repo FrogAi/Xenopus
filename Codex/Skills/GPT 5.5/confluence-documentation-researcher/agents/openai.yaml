@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $confluence-documentation-researcher only when Confluence is in scope: verify connector readiness, cite page evidence, stage any write for confirmation, and report permission gaps."
+  display_name: "Confluence Research"
+  short_description: "Confluence research"
+policy:
+  allow_implicit_invocation: true

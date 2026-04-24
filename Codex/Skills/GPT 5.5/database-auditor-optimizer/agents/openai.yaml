@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $database-auditor-optimizer to inspect schema/query/migration evidence, verify engine/tool behavior, avoid unsafe live DB actions, and report plans, findings, validation, and risks."
+  display_name: "Database Optimizer"
+  short_description: "Database audit and tuning"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $artifact-privacy-auditor to inspect only the scoped local artifacts, classify privacy/secret/retention risk without printing values, and report safe keep/redact/delete actions."
+  display_name: "Artifact Privacy"
+  short_description: "Artifact privacy audit"
+policy:
+  allow_implicit_invocation: true

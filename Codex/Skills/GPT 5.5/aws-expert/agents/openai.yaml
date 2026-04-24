@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $aws-expert only for scoped AWS work: verify account/region, prefer read-only evidence, gate every live mutation, and report findings, commands, validation, and residual risk."
+  display_name: "AWS Expert"
+  short_description: "AWS infrastructure expert"
+policy:
+  allow_implicit_invocation: true

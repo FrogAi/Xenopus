@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $custom-agent-builder to decide whether a durable Codex or Claude agent is warranted, verify current runtime docs, and create/audit only the exact agent files in scope."
+  display_name: "Custom Agents"
+  short_description: "Custom agent builder"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $frontend-mock-creator to build or revise a browser-reviewable prototype from the user's visual brief, validate it in a browser, and keep it separate from production code."
+  display_name: "Frontend Mock"
+  short_description: "Frontend mock creator"
+policy:
+  allow_implicit_invocation: true

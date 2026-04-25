@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $downstream-impact-tracer to trace callers, consumers, routes, events, and generated surfaces for the named change, then return source-cited blast radius and unknowns."
+  display_name: "Impact Tracer"
+  short_description: "Downstream impact trace"
+policy:
+  allow_implicit_invocation: true

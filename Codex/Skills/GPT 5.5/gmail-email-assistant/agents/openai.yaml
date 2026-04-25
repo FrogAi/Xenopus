@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $gmail-email-assistant for Gmail/email read-only work: verify connector access, cite message evidence, and keep drafts chat-only."
+  display_name: "Gmail Email Assistant"
+  short_description: "Read and draft email in chat"
+policy:
+  allow_implicit_invocation: true

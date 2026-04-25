@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $frontend-implementer to translate the provided design/source into production frontend code, follow existing app conventions, and verify responsive, accessible browser behavior."
+  display_name: "Frontend Implementer"
+  short_description: "Production frontend build"
+policy:
+  allow_implicit_invocation: true

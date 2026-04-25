@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $legal-reviewer to review existing legal text as a counsel-prep aid, fetch current primary sources for material claims, and return risks, obligations, questions, and limits."
+  display_name: "Legal Reviewer"
+  short_description: "Legal document review"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $jira-ticket-manager only when Jira is the source of truth: verify connector readiness, read current issue/project metadata, stage each write, and re-read after execution."
+  display_name: "Jira Manager"
+  short_description: "Jira issue management"
+policy:
+  allow_implicit_invocation: true

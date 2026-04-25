@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $documentation-writer to create or repair local documentation from source evidence, validate examples and links, and avoid external publishing."
+  display_name: "Documentation Writer"
+  short_description: "Write and audit local docs"
+policy:
+  allow_implicit_invocation: true

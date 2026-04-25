@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $incident-responder to collect incident evidence, draft mitigations and communications in chat, gate live operations, and track recovery, cleanup, and postmortem actions."
+  display_name: "Incident Responder"
+  short_description: "Incident response support"
+policy:
+  allow_implicit_invocation: true

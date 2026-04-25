@@ -1,0 +1,11 @@
+interface:
+  default_prompt: "Use $dynatrace-expert only with active Dynatrace scope: verify tenant/tool readiness, run bounded read-only telemetry queries, and gate any persistent monitoring change."
+  display_name: "Dynatrace Expert"
+  short_description: "Dynatrace telemetry work"
+policy:
+  allow_implicit_invocation: true
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "dynatrace"
+      description: "Dynatrace MCP server for bounded telemetry reads"

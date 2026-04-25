@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $observability-investigator for non-Dynatrace telemetry: verify read access, run bounded queries, correlate signals, and avoid monitoring mutations."
+  display_name: "Observability Investigator"
+  short_description: "Investigate telemetry evidence"
+policy:
+  allow_implicit_invocation: true

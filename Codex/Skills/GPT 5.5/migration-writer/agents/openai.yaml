@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $migration-writer to inspect current schema/code/tooling, design reversible migration steps, write requested migration artifacts, and validate without production apply."
+  display_name: "Migration Writer"
+  short_description: "Migration writing"
+policy:
+  allow_implicit_invocation: true

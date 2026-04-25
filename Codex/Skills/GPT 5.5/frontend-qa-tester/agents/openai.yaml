@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $frontend-qa-tester to inspect the UI target, run or create browser QA, classify failures, and report reproducible evidence with accessibility and viewport coverage."
+  display_name: "Frontend QA"
+  short_description: "Frontend QA testing"
+policy:
+  allow_implicit_invocation: true

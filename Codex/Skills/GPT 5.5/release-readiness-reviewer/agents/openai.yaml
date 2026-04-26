@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $release-readiness-reviewer to inspect release evidence, decide ship or no-ship, and list blockers, conditions, validation gaps, rollout, and rollback risk."
+  display_name: "Release Readiness"
+  short_description: "Ship/no-ship review"
+policy:
+  allow_implicit_invocation: true

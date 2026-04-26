@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $openpilot-route-debugger to inspect the target checkout and route/log evidence, verify signal timing and frames, and report route-backed root cause or validation gaps."
+  display_name: "Openpilot Routes"
+  short_description: "Openpilot route debugging"
+policy:
+  allow_implicit_invocation: true

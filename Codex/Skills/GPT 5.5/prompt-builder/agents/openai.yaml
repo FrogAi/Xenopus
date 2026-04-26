@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $prompt-builder to build or audit a prompt for a named target runtime, verify mutable provider/tool facts, and deliver a target-native prompt with assumptions and risks."
+  display_name: "Prompt Builder"
+  short_description: "Prompt artifact builder"
+policy:
+  allow_implicit_invocation: true

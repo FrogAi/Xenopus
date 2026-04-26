@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $skill-builder to modify or audit Codex skill artifacts against current Codex docs, preserve intent, validate on-disk files, and report residual risks."
+  display_name: "Skill Builder"
+  short_description: "Codex skill builder"
+policy:
+  allow_implicit_invocation: true

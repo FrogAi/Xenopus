@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $topic-researcher to gather current primary sources, compare evidence quality, separate facts from inference, and return citations, conflicts, and residual uncertainty."
+  display_name: "Topic Researcher"
+  short_description: "Evidence-backed research"
+policy:
+  allow_implicit_invocation: true

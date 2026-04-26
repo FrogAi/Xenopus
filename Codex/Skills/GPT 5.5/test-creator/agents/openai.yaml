@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $test-creator to inspect the target behavior, add focused tests using project conventions, run relevant validation, and report coverage limits and cleanup."
+  display_name: "Test Creator"
+  short_description: "Focused test creation"
+policy:
+  allow_implicit_invocation: true

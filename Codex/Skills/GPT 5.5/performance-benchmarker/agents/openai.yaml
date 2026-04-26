@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $performance-benchmarker to define workload, run representative repeated measurements, control noise, and report statistics, confounders, and validation limits."
+  display_name: "Performance Benchmark"
+  short_description: "Performance benchmarking"
+policy:
+  allow_implicit_invocation: true

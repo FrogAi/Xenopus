@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $subagent-spawner only after explicit delegation intent: design bounded subagent briefs, assign disjoint ownership, avoid blocking work, and report integration steps."
+  display_name: "Subagent Spawner"
+  short_description: "Codex subagent routing"
+policy:
+  allow_implicit_invocation: true

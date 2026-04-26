@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $plan-creator to produce or audit a self-contained execution plan with evidence, dependencies, ordered steps, validation gates, rollback, cleanup, and residual risks."
+  display_name: "Plan Creator"
+  short_description: "Execution plan creator"
+policy:
+  allow_implicit_invocation: true

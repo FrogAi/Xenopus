@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $pr-creator to inspect branch diff, templates, validation, linked issues, and platform readiness, then draft or create/update the PR only with explicit side-effect scope."
+  display_name: "PR Creator"
+  short_description: "Pull request preparation"
+policy:
+  allow_implicit_invocation: true

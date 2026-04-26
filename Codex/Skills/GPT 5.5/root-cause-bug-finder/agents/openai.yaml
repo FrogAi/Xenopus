@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $root-cause-bug-finder to build an evidence chain from symptom to cause, test competing hypotheses, and report proof, confidence, validation, and next action."
+  display_name: "Root Cause Debugger"
+  short_description: "Root-cause debugging"
+policy:
+  allow_implicit_invocation: true

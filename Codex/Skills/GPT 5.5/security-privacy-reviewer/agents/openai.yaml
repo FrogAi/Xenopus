@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $security-privacy-reviewer to inspect scoped code/config/data flows for defensive security and privacy risks, redact secrets, and return evidence-backed findings only."
+  display_name: "Security Privacy"
+  short_description: "Security and privacy review"
+policy:
+  allow_implicit_invocation: true

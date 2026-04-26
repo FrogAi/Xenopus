@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $server-optimizer to inspect server/runtime config, verify current platform docs, stage local edits, and gate live apply/deploy/restart operations."
+  display_name: "Server Optimizer"
+  short_description: "Server config tuning"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $release-notes-creator to inspect the source range and release conventions, draft truthful notes with verified claims, and gate any platform publication."
+  display_name: "Release Notes"
+  short_description: "Release notes drafting"
+policy:
+  allow_implicit_invocation: true

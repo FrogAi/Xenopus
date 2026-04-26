@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $surgical-change-finder to compare minimal implementation paths from source evidence, rank blast radius and validation strength, and recommend the safest small change."
+  display_name: "Surgical Change Finder"
+  short_description: "Minimal-change analysis"
+policy:
+  allow_implicit_invocation: true

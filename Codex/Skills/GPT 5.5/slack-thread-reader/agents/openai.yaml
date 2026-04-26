@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $slack-thread-reader only for Slack read evidence: verify connector access, cite permalinks or channel timestamps, and provide chat-only drafts for send-like requests."
+  display_name: "Slack Reader"
+  short_description: "Slack read and summarize"
+policy:
+  allow_implicit_invocation: true

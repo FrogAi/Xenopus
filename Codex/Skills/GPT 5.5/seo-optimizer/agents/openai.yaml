@@ -1,0 +1,6 @@
+interface:
+  default_prompt: "Use $seo-optimizer to inspect the local site/repo, verify current SEO/search docs when material, and return prioritized findings or safe local fixes with validation."
+  display_name: "SEO Optimizer"
+  short_description: "SEO audit and fixes"
+policy:
+  allow_implicit_invocation: true

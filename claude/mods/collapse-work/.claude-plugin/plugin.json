@@ -1,0 +1,6 @@
+{
+  "name": "collapse-work",
+  "version": "0.1.0",
+  "description": "Folds a finished turn's work under a \"Worked for\" row, leaving the final answer, like Codex",
+  "author": { "name": "FrogAi" }
+}

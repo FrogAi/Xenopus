@@ -1,0 +1,9 @@
+# UI content
+
+Use for UI content design, changes or review.
+
+Preserve established feature names and domain terminology by default when improving user-facing copy. Use plain-language descriptions and examples to explain them to beginners. Distinguish generic labels and new names from recognized feature identities. Propose renaming an established feature only for an explicit request to rename it or a specific accuracy or usability problem, and explain the tradeoff with recognition and consistency.
+
+For feature and setting descriptions, lead with a concise bold summary of the behavior and any essential condition or consequence needed to interpret it correctly. Keep supporting examples and explanation in regular weight; a reader who scans only the bold text should get an accurate core understanding.
+
+Design and write all UI content for the actual available space and typography, including labels, descriptions, controls, dialogs and dynamic readouts. Prevent unintended clipping, overlap, overflow and obscured controls while preserving readability and essential information. Verify rendered fit across the supported screen sizes, text scales, relevant states, realistic content lengths and affected languages before calling the UI ready. Check how the toolkit treats literal characters: in Qt button text, for example, `&` marks a keyboard shortcut and must be written `&&` to appear. Selection prompts should explain what to choose and why. Status messages should distinguish progress, success, failure and any further action required from the user. Keep confirmations focused on the action, its scope and essential consequences, including whether follow-up actions happen automatically. For a blocked action, preserve the restriction and what the user must do to try again. Shorten redundant wording and move optional detail into the setting description; fewer words alone do not establish clearer copy.

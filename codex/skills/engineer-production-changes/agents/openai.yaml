@@ -1,0 +1,4 @@
+interface:
+  display_name: "Production Engineering"
+  short_description: "Small, correct, evidence-backed engineering"
+  default_prompt: "Use $engineer-production-changes for this engineering task, applying only the relevant stages and producing a complete, readable result within the requested scope."

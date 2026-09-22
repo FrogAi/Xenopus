@@ -1,0 +1,4 @@
+interface:
+  display_name: "Explore Frontend Designs"
+  short_description: "Explore and refine production-faithful UI directions"
+  default_prompt: "Use $explore-frontend-designs to create and compare distinct, responsive, interactive frontend directions, then refine the selected design."

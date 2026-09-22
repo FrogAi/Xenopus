@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write in My Voice"
+  short_description: "Draft messages and replies in your voice"
+  default_prompt: "Use $write-in-my-voice to draft this content in my established voice."

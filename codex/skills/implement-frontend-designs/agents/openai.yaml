@@ -1,0 +1,4 @@
+interface:
+  display_name: "Implement Frontend Designs"
+  short_description: "Implement approved mockups with exact visual fidelity"
+  default_prompt: "Use $implement-frontend-designs to implement the approved frontend reference exactly and verify its appearance and real behavior."

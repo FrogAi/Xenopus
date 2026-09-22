@@ -1,0 +1,6 @@
+interface:
+  display_name: "Coordinate Specialists"
+  short_description: "Coordinate specialist work and independent audits"
+  default_prompt: "Use $coordinate-specialists to coordinate useful specialist work and independently verify the result."
+policy:
+  allow_implicit_invocation: true

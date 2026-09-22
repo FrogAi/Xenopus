@@ -1,0 +1,4 @@
+interface:
+  display_name: "openpilot Development on comma Devices"
+  short_description: "Develop and test on a development device; retrieve logs from a driving device"
+  default_prompt: "Use $develop-on-comma-device to perform development work on a development device or retrieve driving logs from a driving device, following the selected device's role."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Improve Personal Customizations"
+  short_description: "Keep Claude Code and Codex customizations correct and current"
+  default_prompt: "Use $improve-personal-customizations to assess this evidence and authority and maintain the responsible customization."

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Handoff Task"
+  short_description: "Prepare task handoffs and recover prior context"
+  default_prompt: "Use $handoff-task to prepare or recover a task handoff, preserving decisions, evidence and authorization boundaries."
+policy:
+  allow_implicit_invocation: true

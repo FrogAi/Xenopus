@@ -1,0 +1,7 @@
+{
+  "name": "queue",
+  "version": "0.1.0",
+  "description": "Queues messages sent while Claude is working and sends them one per turn, like Codex",
+  "author": { "name": "FrogAi" },
+  "types": "./types/index.d.ts"
+}

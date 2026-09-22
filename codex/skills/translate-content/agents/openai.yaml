@@ -1,0 +1,4 @@
+interface:
+  display_name: "Translate Content"
+  short_description: "Fluent, faithful translation and localization"
+  default_prompt: "Use $translate-content to translate, localize or review this text with natural phrasing and exact meaning."

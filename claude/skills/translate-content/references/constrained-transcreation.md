@@ -1,0 +1,13 @@
+# Explicitly constrained transformations
+
+Use only when a novelty locale, dialect, pseudolocale or controlled voice is explicitly subject to a source-exact or limited-change contract. Ordinary translation and regional localization require natural grammar and do not inherit byte equality. Broad creative transcreation instead follows the requested creative brief and the main skill's semantic requirements.
+
+Establish the allowed transformation: exact neutral text, approved lexical substitutions, a reversible grammar layer, bounded additions preserving the source, or another explicitly agreed constraint. Identify protected zones, mappings, permitted inflection, label references and any style-density limit that the brief needs. Apply contracts per message or equivalent variant where appropriate. Do not introduce unrelated copyediting because one word is themed.
+
+Preserve actors, actions, transfer direction, conditions, negation, quantities, consequences and reversibility. Keep technical anchors recognizable. Avoid jokes, filler and ambiguous metaphors in alerts, destructive choices, account/security controls and other consequential instructions. Prefer unchanged source or an approved reversible treatment there; content subject to the main skill's qualified-review gates retains those gates regardless of a playful catalog name.
+
+Use the stable identity and format checks in [quality-gates.md](quality-gates.md). If an existing constrained catalog systematically drifted, recover affected targets from the authoritative source by stable key and reapply only permitted transformations within the authorized revision scope. Copying source text is an intermediate state, not evidence that requested style coverage is complete.
+
+Review each source-different message and every plural, gender, formality or other variant branch against its permitted transformation. Restore unsupported deltas. Check neutral equality only where the chosen contract and equivalent branch structure allow it; otherwise verify the applicable reverse mapping or source-preservation rule plus semantic fidelity. Keep intentional transformations, neutral entries, unresolved items and branch coverage distinguishable. Locale-required branch systems must not be forced into source-shaped byte equality.
+
+For substantive work, obtain independent review of both the permitted changes and the resulting meaning, including label-reference consistency. Treat normalized diffs or style counters as heuristics unless the selected contract makes them exact. Recheck affected references, language, structure and runtime after corrections. Retain only the smallest useful explanation of the transformation and its observed coverage, not a second review framework.

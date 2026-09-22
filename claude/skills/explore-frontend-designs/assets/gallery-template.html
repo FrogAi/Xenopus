@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{PROJECT}} design · Round {{N}}</title>
+<style>
+  :root { --bg: #f3f3f2; --ink: #1a1a1a; --muted: #5c5c5c; --line: #d7d7d5; --panel: #ffffff; --act: #2b2b2b; --act-ink: #ffffff; --ok: #1d5e3a; --warn: #9a3b1a; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, "Segoe UI", Roboto, sans-serif; }
+  a { color: var(--ink); }
+  header.top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; padding: 28px 24px 8px; max-width: 1400px; margin: 0 auto; }
+  header.top h1 { margin: 0; font-size: 28px; letter-spacing: -0.01em; }
+  header.top p { margin: 0; color: var(--muted); }
+  .intro { max-width: 1400px; margin: 0 auto; padding: 4px 24px 18px; color: var(--muted); }
+  .grid { max-width: 1400px; margin: 0 auto; padding: 0 24px 40px; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 410px), 1fr)); gap: 22px; }
+  .opt { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; }
+  .thumb { position: relative; aspect-ratio: 16 / 10; background: #e2e2e0; overflow: hidden; cursor: zoom-in; border: 0; padding: 0; display: block; width: 100%; }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+  .thumb .phone { position: absolute; right: 10px; bottom: 10px; width: 22%; aspect-ratio: 1 / 1.95; border-radius: 10px; overflow: hidden; border: 3px solid #111; background: #111; box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
+  .thumb .missing { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font-size: 14px; }
+  .meta { padding: 16px 18px 18px; display: grid; gap: 8px; align-content: start; }
+  .meta h2 { margin: 0; font-size: 21px; letter-spacing: -0.01em; }
+  .meta h2 span { color: var(--muted); font-weight: 500; margin-right: 8px; }
+  .meta p { margin: 0; font-size: 15px; }
+  .meta .trade { color: var(--muted); font-size: 14.5px; }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  button, .btn { font: inherit; font-size: 14.5px; font-weight: 600; border-radius: 8px; padding: 9px 14px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+  button:hover, .btn:hover { border-color: #8f8f8c; }
+  button.choose { background: var(--act); color: var(--act-ink); border-color: var(--act); }
+  button:disabled { opacity: 0.5; cursor: not-allowed; }
+  :focus-visible { outline: 3px solid #4d7fd1; outline-offset: 2px; }
+  .explore { max-width: 1400px; margin: 0 auto; padding: 0 24px 60px; }
+  .explore form { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 18px; display: grid; gap: 10px; }
+  .explore h2 { margin: 0; font-size: 20px; }
+  textarea { width: 100%; min-height: 84px; font: inherit; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--line); background: #fbfbfa; color: var(--ink); }
+  .status { font-weight: 600; }
+  .status.ok { color: var(--ok); }
+  .status.err { color: var(--warn); }
+  .history { max-width: 1400px; margin: 0 auto; padding: 0 24px 40px; color: var(--muted); font-size: 14.5px; }
+  #banner { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 60; padding: 12px 18px; border-radius: 10px; font-weight: 600; color: #fff; box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+  #banner:empty { display: none; }
+  #banner.ok { background: var(--ok); }
+  #banner.err { background: var(--warn); }
+
+  /* Full-size viewer */
+  .viewer { position: fixed; inset: 0; z-index: 50; background: #121212; color: #ececec; display: grid; grid-template-rows: auto 1fr; }
+  .viewer[hidden] { display: none; }
+  .vbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding: 10px 14px; border-bottom: 1px solid #2e2e2e; }
+  .vbar h2 { margin: 0; font-size: 17px; margin-right: auto; }
+  .vbar button, .vbar .btn { background: #1f1f1f; color: #ececec; border-color: #3a3a3a; }
+  .vbar button[aria-pressed="true"] { background: #ececec; color: #121212; }
+  .vbar button.choose { background: #ececec; color: #121212; border-color: #ececec; }
+  .stage { position: relative; overflow: auto; display: grid; justify-items: center; align-items: start; padding: 14px; }
+  .frame-wrap { transform-origin: top left; }
+  .frame-wrap iframe { border: 0; background: #fff; display: block; border-radius: 6px; }
+  .vnote-field input { font: inherit; font-size: 14px; padding: 8px 10px; border-radius: 8px; border: 1px solid #3a3a3a; background: #1f1f1f; color: #ececec; width: min(320px, 70vw); }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  @media (max-width: 640px) { .vbar h2 { width: 100%; } }
+</style>
+</head>
+<body>
+<header class="top" id="page-top">
+  <h1>{{PROJECT}} design · Round {{N}}</h1>
+  <p>{{ROUND_QUESTION}}</p>
+  <div class="row"><button type="button" id="open-all">Open all in new tabs</button><span class="status" id="open-all-status" role="status"></span></div>
+</header>
+<p class="intro">Open any option to try it full size at <span id="width-list"></span>. {{WHAT TO TRY, for example: the navigation, the views and each option's signature interaction}}. When one feels right, press <b>Choose this direction</b>. A choice starts the next round of refinements around it; nothing is final yet. To add a note to your choice, mix options, or ask for different ones, use the box at the bottom first.</p>
+
+<main class="grid" id="grid"></main>
+
+<section class="explore" aria-labelledby="ex-title">
+  <form id="explore-form">
+    <h2 id="ex-title">Add a note, mix options, or ask for different ones</h2>
+    <label for="explore-note">Optional note, sent with whichever button you press: what to keep, combine or drop (for example "C's layout with B's colors").</label>
+    <textarea id="explore-note" maxlength="1500"></textarea>
+    <div class="row"><button type="submit" id="explore-btn">None of these: keep exploring</button><span class="status" id="explore-status" role="status"></span></div>
+  </form>
+</section>
+
+<p class="history" id="history">{{HISTORY_LINKS}}</p>
+
+<div id="banner" role="status"></div>
+
+<div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-labelledby="v-title">
+  <div class="vbar">
+    <h2 id="v-title"></h2>
+    <button type="button" id="v-device"></button>
+    <a class="btn" id="v-open" target="_blank" rel="noopener">Open page alone</a>
+    <label class="vnote-field"><span class="sr">Note</span><input id="v-note" type="text" maxlength="1500" placeholder="Optional note with your choice"></label>
+    <button type="button" class="choose" id="v-choose">Choose this direction</button>
+    <button type="button" id="v-close">Close</button>
+  </div>
+  <div class="stage" id="stage"><div class="frame-wrap" id="frame-wrap"><iframe id="frame" title="Option preview"></iframe></div></div>
+</div>
+
+<script>
+const ROUND = "{{ROUND_ID}}"; // must match the bridge --round; --choices must list every option id plus "explore"
+// The review widths, desktop first and phone last. Each option folder holds shot-<desktop>.png and shot-<phone>.png.
+const WIDTHS = [{ label: "Desktop", w: 1440 }, { label: "Tablet", w: 768 }, { label: "Phone", w: 390 }];
+const OPTIONS = [
+  // One entry per option, in gallery order; each option lives in <id>/index.html.
+  { id: "A", name: "{{NAME}}", idea: "{{GOVERNING IDEA, ONE OR TWO SENTENCES}}", trade: "{{TRADEOFF}}" },
+];
+
+const desktopW = WIDTHS[0].w, phoneW = WIDTHS[WIDTHS.length - 1].w;
+document.getElementById("width-list").textContent = WIDTHS.map(x => `${x.label.toLowerCase()} (${x.w})`).join(", ");
+
+const grid = document.getElementById("grid");
+for (const o of OPTIONS) {
+  const el = document.createElement("article");
+  el.className = "opt";
+  el.innerHTML = `
+    <button class="thumb" type="button" aria-label="Open ${o.name} full size">
+      <img class="desk" src="${o.id}/shot-${desktopW}.png" alt="" loading="lazy">
+      <span class="phone"><img src="${o.id}/shot-${phoneW}.png" alt="" loading="lazy"></span>
+    </button>
+    <div class="meta">
+      <h2><span>${o.id}</span>${o.name}</h2>
+      <p>${o.idea}</p>
+      ${o.trade ? `<p class="trade">${o.trade}</p>` : ""}
+      <div class="row">
+        <button type="button" class="open">Try it full size</button>
+        <a class="btn" href="?view=${encodeURIComponent(o.id)}" target="_blank" rel="noopener">Open in new tab</a>
+        <button type="button" class="choose" data-choice="${o.id}">Choose this direction</button>
+      </div>
+    </div>`;
+  // A missing capture says so instead of leaving a blank card.
+  el.querySelector("img.desk").addEventListener("error", e => { e.target.outerHTML = `<span class="missing">No shot-${desktopW}.png yet</span>`; });
+  el.querySelector(".phone img").addEventListener("error", e => e.target.parentElement.remove());
+  el.querySelector(".thumb").addEventListener("click", () => openViewer(o));
+  el.querySelector(".open").addEventListener("click", () => openViewer(o));
+  grid.appendChild(el);
+}
+
+// Opens every option in its own tab from one click; browsers that allow only one pop-up per click get told so.
+document.getElementById("open-all").addEventListener("click", () => {
+  let opened = 0;
+  for (const o of OPTIONS) {
+    const tab = window.open(`?view=${encodeURIComponent(o.id)}`, "_blank");
+    if (!tab) break;
+    tab.opener = null;
+    opened++;
+  }
+  const s = document.getElementById("open-all-status");
+  s.className = "status " + (opened === OPTIONS.length ? "ok" : "err");
+  s.textContent = opened === OPTIONS.length ? "Opened all." : `Your browser opened ${opened} of ${OPTIONS.length}. Allow pop-ups for this page, then press again.`;
+});
+
+// Viewer: the real page in an iframe at the chosen CSS width, scaled to fit the screen when wider.
+const viewer = document.getElementById("viewer"), frame = document.getElementById("frame"), wrap = document.getElementById("frame-wrap"), stage = document.getElementById("stage");
+let current = null, width = desktopW, lastFocus = null;
+// The page behind the viewer stays out of keyboard reach while the viewer is open.
+const behindViewer = ["page-top", "grid", "explore-form", "history"].map(id => document.getElementById(id)).concat([document.querySelector(".intro")]);
+// One button steps through the review widths: desktop, tablet, phone, then back to desktop.
+const deviceButton = document.getElementById("v-device");
+function showDevice() {
+  const i = WIDTHS.findIndex(x => x.w === width), next = WIDTHS[(i + 1) % WIDTHS.length];
+  deviceButton.textContent = `${WIDTHS[i].label} ${WIDTHS[i].w} ⇄`;
+  deviceButton.setAttribute("aria-label", `Showing ${WIDTHS[i].label.toLowerCase()} width, ${WIDTHS[i].w}. Switch to ${next.label.toLowerCase()}, ${next.w}`);
+}
+deviceButton.addEventListener("click", () => {
+  const i = WIDTHS.findIndex(x => x.w === width);
+  width = WIDTHS[(i + 1) % WIDTHS.length].w;
+  showDevice();
+  layout();
+});
+showDevice();
+function layout() {
+  const avail = stage.clientWidth - 28, h = stage.clientHeight - 28;
+  const scale = Math.min(1, avail / width);
+  frame.style.width = width + "px";
+  frame.style.height = Math.round(h / scale) + "px";
+  wrap.style.transform = `scale(${scale})`;
+  // the transform does not shrink the box itself, so size the box to the scaled preview
+  wrap.style.width = Math.round(width * scale) + "px";
+  wrap.style.height = Math.round(h) + "px";
+}
+function openViewer(o) {
+  current = o; lastFocus = document.activeElement;
+  document.getElementById("v-title").textContent = `${o.id} · ${o.name}`;
+  frame.src = `${o.id}/index.html`;
+  document.getElementById("v-open").href = `${o.id}/index.html`;
+  for (const el of behindViewer) el.inert = true;
+  viewer.hidden = false; layout();
+  document.getElementById("v-close").focus();
+}
+function closeViewer() { viewer.hidden = true; frame.src = "about:blank"; for (const el of behindViewer) el.inert = false; if (lastFocus) lastFocus.focus(); }
+document.getElementById("v-close").addEventListener("click", closeViewer);
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !viewer.hidden) closeViewer(); });
+addEventListener("resize", () => { if (!viewer.hidden) layout(); });
+// "Open in new tab" opens this page with ?view=<id>: the option full-window in the viewer, with the device switch.
+const viewParam = new URLSearchParams(location.search).get("view");
+const viewOption = OPTIONS.find(o => o.id === viewParam);
+if (viewOption) openViewer(viewOption);
+document.getElementById("v-choose").addEventListener("click", () => submit(current.id, noteText()));
+
+// Selection handoff to the session: success shows only after the bridge accepts this exact round and choice.
+let sent = false;
+function showResult(text, ok) {
+  const s = document.getElementById("explore-status");
+  s.textContent = text; s.className = "status " + (ok ? "ok" : "err");
+  const b = document.getElementById("banner");
+  b.textContent = text; b.className = ok ? "ok" : "err";
+}
+async function submit(choice, note) {
+  if (sent) return;
+  const buttons = document.querySelectorAll("button.choose, #explore-btn");
+  buttons.forEach(b => b.disabled = true);
+  try {
+    const r = await fetch("/__review_selection", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ round: ROUND, choice, note }) });
+    const body = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error(body.error || `HTTP ${r.status}`);
+    if (body.accepted !== true || body.round !== ROUND || body.choice !== choice) throw new Error("the server did not confirm this choice");
+    sent = true;
+    const label = choice === "explore" ? "Keep exploring" : `${choice} · ${OPTIONS.find(o => o.id === choice).name}`;
+    showResult(`Received: ${label}.`, true);
+  } catch (err) {
+    buttons.forEach(b => b.disabled = false);
+    showResult(`Not sent: ${err.message}. Send your choice in chat instead.`, false);
+  }
+}
+function noteText() { return (document.getElementById("v-note").value.trim() || document.getElementById("explore-note").value.trim()); }
+document.getElementById("v-note").addEventListener("input", e => { document.getElementById("explore-note").value = e.target.value; });
+document.getElementById("explore-note").addEventListener("input", e => { document.getElementById("v-note").value = e.target.value; });
+for (const b of document.querySelectorAll("button.choose[data-choice]")) b.addEventListener("click", () => submit(b.dataset.choice, noteText()));
+document.getElementById("explore-form").addEventListener("submit", e => { e.preventDefault(); submit("explore", noteText()); });
+</script>
+</body>
+</html>

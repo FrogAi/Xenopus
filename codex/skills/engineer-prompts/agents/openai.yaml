@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prompt Engineering"
+  short_description: "Research, refine, and verify model-facing prompts"
+  default_prompt: "Use $engineer-prompts to clarify my requirements and engineer a prompt for my target, with evidence and appropriate validation."

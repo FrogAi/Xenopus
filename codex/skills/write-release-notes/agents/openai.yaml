@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write Release Notes"
+  short_description: "Create engaging, clear public release notes"
+  default_prompt: "Use $write-release-notes to turn the available changes into engaging, accurate release notes for first-time and returning readers."
